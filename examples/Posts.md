@@ -1,7 +1,7 @@
 ```plantuml
 @startuml
 
-!include https://github.com/xbot/plantuml-erd/raw/master/src/Library.iuml
+!include https://raw.githubusercontent.com/xbot/plantuml-erd/master/src/Library.iuml
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Entities
