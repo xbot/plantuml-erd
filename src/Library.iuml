@@ -91,7 +91,7 @@ hide stereotypes
     !if ($notNull == 1)
         !$name = NN($name)
     !endif
-    !$val = $name + " <color:royalBlue><size:8>" + $type
+    !$val = $name + " <color:royalBlue><size:8>" + %upper($type)
     !if ($defVal != "")
         !$val = $val + " " + DV($defVal)
     !endif
