@@ -114,3 +114,6 @@ hide stereotypes
 ' 主键列
 !$tmp = PK()
 !global PRIMARY_KEY = Column($tmp, PK_TYPE)
+
+' 列注释中的换行符
+!global CMBR="\n<size:8><color:gray><i>"
