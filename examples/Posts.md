@@ -3,6 +3,9 @@
 
 !include https://raw.githubusercontent.com/xbot/plantuml-erd/master/src/Library.iuml
 
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Entities
 '
@@ -36,7 +39,6 @@ Table(comments, 评论表) {
     Column("user_id", PK_TYPE, 1, "", "用户ID")
     Column("content", "NVARCHAR[255]", 1, "", "评论内容")
 }
-posts --> comments
 
 Table(post_logs, 文章日志表) {
     PRIMARY_KEY
@@ -46,7 +48,9 @@ Table(post_logs, 文章日志表) {
     Column("action", UN("TINYINT"), 1, "0", "操作类型", "1:创建; 2:修改; 3:删除")
     Column("data", "TEXT", 0, "", "操作详情")
 }
-posts --> post_logs
+
+posts ||..o{ comments
+posts ||..|{ post_logs
 
 @enduml
 ```
